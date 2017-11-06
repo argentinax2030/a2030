@@ -1,0 +1,38 @@
+// bower:scss
+// endbower
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  width: 100%;
+  padding-bottom: ($height / $width) * 100%;
+}
+
+#a2030-container {
+  background-color: red;
+  &.aspect-ratio {
+    @include aspect-ratio(16, 9);
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
+#slide1 {
+  background-color: lightyellow;
+}
+
+#slide2 {
+  background-color: orange;
+}
+
+#slide3 {
+  background-color: deeppink;
+}
+
+#slide4 {
+  background-color: darkred;
+}
