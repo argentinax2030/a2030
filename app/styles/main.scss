@@ -1,6 +1,9 @@
 // bower:scss
 // endbower
 
+$darkblue: #172238;
+$orangeSlides: #FBAF3F;
+
 @mixin aspect-ratio($width, $height) {
   position: relative;
   width: 100%;
@@ -21,18 +24,109 @@
   }
 }
 
+h1 {
+  color:#fff;
+}
+
 #slide1 {
-  background-color: lightyellow;
+  background: url(../assets/slide1_fondo.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #slide2 {
-  background-color: orange;
+  background-color: $darkblue;
 }
 
 #slide3 {
-  background-color: deeppink;
+  background-color: $darkblue;
 }
 
 #slide4 {
-  background-color: darkred;
+  background-color: $darkblue;
+}
+
+#slide5 {
+  background: url(http://via.placeholder.com/1319x546) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.section1 {
+  color:#fff;
+}
+
+.Aligner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Aligner-item {
+  max-width: 100%;
+}
+
+.Aligner-item--bottom {
+  align-self: flex-end;
+}
+
+.avanzar {
+  margin-top:70px;
+}
+
+.headerSlideTwo {
+  background: $orangeSlides;
+  height: 25px;
+  width:75%;
+  margin:0 auto;
+  margin-top:20px;
+}
+
+.textSlideTwo {
+  color:#fff;
+}
+
+.marginTopImageSliderTwo {
+  margin-top:30px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.titleSlideThree {
+  background: $orangeSlides;
+  height: 25px;
+  max-width: 100%;
+}
+
+.buttonsSlideThree {
+  background-color: $darkblue;
+  text-transform: uppercase;
+  border: #fff solid 1px;
+  color: white;
+  padding: 2px 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in;
+  &:hover{
+     background: $orangeSlides;
+  }
+}
+
+.bigTextSlides {
+  font-size: 24px;
+  color:#fff;
+  margin-bottom: 50px;
 }
