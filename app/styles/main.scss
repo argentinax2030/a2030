@@ -4,6 +4,8 @@
 $darkblue: #172238;
 $orangeSlides: #fbaf3f;
 
+$ligthblue: #33ccff;
+
 @mixin aspect-ratio($width, $height) {
   position: relative;
   width: 100%;
@@ -11,7 +13,6 @@ $orangeSlides: #fbaf3f;
 }
 
 #a2030-container {
-  background-color: red;
   &.aspect-ratio {
     @include aspect-ratio(16, 9);
     .content {
@@ -20,6 +21,20 @@ $orangeSlides: #fbaf3f;
       left: 0;
       right: 0;
       bottom: 0;
+    }
+    #chart-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      pointer-events: none;
+      line.floating-lines {
+        stroke: $ligthblue;
+        stroke-width: 1;
+        stroke-opacity: 0.5;
+      }
     }
   }
 }
