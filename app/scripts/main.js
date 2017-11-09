@@ -170,14 +170,17 @@ var A2030;
     "slide-2": function() {
       console.log("afterLoad 2");
       A2030Charts.lines.randomize();
+      A2030Charts.network.init();
     },
     "slide-3": function() {
       console.log("afterLoad 3");
       A2030Charts.lines.randomize();
+      A2030Charts.energy.init();
     },
     "slide-4": function() {
       console.log("afterLoad 4");
       A2030Charts.lines.randomize();
+      A2030Charts.population.init();
     },
     "slide-5": function() {
       console.log("afterLoad 5");

@@ -10,8 +10,6 @@ A2030Charts.lines = {};
 	A2030Charts.lines.parent = "#a2030-container";
 
 	A2030Charts.lines.init = function() {
-		console.log("LINES init");
-
 		A2030Charts.lines.svg = d3
 			.select(A2030Charts.lines.parent)
 			.append("svg")
@@ -24,7 +22,6 @@ A2030Charts.lines = {};
 	};
 
 	A2030Charts.lines.updateSize = function() {
-		console.log("LINES updateSize");
 		var sizes = d3
 			.select(A2030Charts.lines.parent)
 			.select(".content")
@@ -40,7 +37,6 @@ A2030Charts.lines = {};
 	};
 
 	A2030Charts.lines.randomize = function() {
-		console.log("LINES randomize");
 		var sizes = d3
 			.select(A2030Charts.lines.parent)
 			.select(".content")
@@ -57,7 +53,6 @@ A2030Charts.lines = {};
 	};
 
 	A2030Charts.lines.render = function(lines) {
-		console.log("LINES render", lines);
 		var sizes = d3
 			.select(A2030Charts.lines.parent)
 			.select(".content")
