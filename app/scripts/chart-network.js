@@ -3,24 +3,24 @@ var A2030Charts = A2030Charts || {};
 A2030Charts.network = {};
 
 (function(global, document, $, d3) {
-	"use strict";
+	'use strict';
 
 	A2030Charts.network = {};
 
-	A2030Charts.network.parent = "#chart-network-container";
+	A2030Charts.network.parent = '#chart-network-container';
 
 	A2030Charts.network.data = {
 		nodes: [
-			{ name: "Internet de las cosas" },
-			{ name: "Big Data" },
-			{ name: "Inteligencia artificial" },
-			{ name: "Neurotecnología" },
-			{ name: "Nanomateriales" },
-			{ name: "Micro y nano satélites" },
-			{ name: "Fabricación aditiva" },
-			{ name: "Tecnologías avanzadas de almacenamiento de energía" },
-			{ name: "Biología sintética" },
-			{ name: "Blockchain" }
+			{ name: 'Internet de las cosas' },
+			{ name: 'Big Data' },
+			{ name: 'Inteligencia artificial' },
+			{ name: 'Neurotecnología' },
+			{ name: 'Nanomateriales' },
+			{ name: 'Micro y nano satélites' },
+			{ name: 'Fabricación aditiva' },
+			{ name: 'Tecnologías avanzadas de almacenamiento de energía' },
+			{ name: 'Biología sintética' },
+			{ name: 'Blockchain' }
 		],
 		edges: [
 			{ source: 0, target: 1 },
@@ -40,7 +40,7 @@ A2030Charts.network = {};
 	};
 
 	A2030Charts.network.init = function() {
-		console.log("init A2030Charts.network");
+		console.log('init A2030Charts.network');
 
 		var sizes = d3
 			.select(A2030Charts.network.parent)
@@ -54,8 +54,8 @@ A2030Charts.network = {};
 		if (!A2030Charts.network.svg) {
 			A2030Charts.network.svg = d3
 				.select(A2030Charts.network.parent)
-				.append("svg")
-				.attr("id", "chart-network");
+				.append('svg')
+				.attr('id', 'chart-network');
 		}
 
 		A2030Charts.network.svg.attr({ width: w, height: h });
@@ -72,33 +72,33 @@ A2030Charts.network = {};
 			.start();
 
 		var edges = A2030Charts.network.svg
-			.selectAll("line")
+			.selectAll('line')
 			.data(A2030Charts.network.data.edges)
 			.enter()
-			.append("line")
-			.attr("id", function(d, i) {
-				return "edge" + i;
+			.append('line')
+			.attr('id', function(d, i) {
+				return 'edge' + i;
 			})
-			.attr("marker-end", "url(#arrowhead)")
-			.style("stroke", "#ccc")
-			.style("pointer-events", "none");
+			.attr('marker-end', 'url(#arrowhead)')
+			.style('stroke', '#ccc')
+			.style('pointer-events', 'none');
 
 		var nodes = A2030Charts.network.svg
-			.selectAll("circle")
+			.selectAll('circle')
 			.data(A2030Charts.network.data.nodes)
 			.enter()
-			.append("circle")
+			.append('circle')
 			.attr({ r: 3 })
-			.style("fill", function(d, i) {
-				return "#1886c7";
+			.style('fill', function(d, i) {
+				return '#1886c7';
 			})
 			.call(force.drag);
 
 		var nodelabels = A2030Charts.network.svg
-			.selectAll(".nodelabel")
+			.selectAll('.nodelabel')
 			.data(A2030Charts.network.data.nodes)
 			.enter()
-			.append("text")
+			.append('text')
 			.attr({
 				x: function(d) {
 					return d.x;
@@ -106,43 +106,43 @@ A2030Charts.network = {};
 				y: function(d) {
 					return d.y;
 				},
-				class: "nodelabel",
-				stroke: "#1886c7"
+				class: 'nodelabel',
+				stroke: '#1886c7'
 			})
 			.text(function(d) {
 				return d.name;
 			});
 
 		var edgepaths = A2030Charts.network.svg
-			.selectAll(".edgepath")
+			.selectAll('.edgepath')
 			.data(A2030Charts.network.data.edges)
 			.enter()
-			.append("path")
+			.append('path')
 			.attr({
 				d: function(d) {
 					return (
-						"M " +
+						'M ' +
 						d.source.x +
-						" " +
+						' ' +
 						d.source.y +
-						" L " +
+						' L ' +
 						d.target.x +
-						" " +
+						' ' +
 						d.target.y
 					);
 				},
-				class: "edgepath",
-				"fill-opacity": 0,
-				"stroke-opacity": 0,
-				fill: "blue",
-				stroke: "red",
+				class: 'edgepath',
+				'fill-opacity': 0,
+				'stroke-opacity': 0,
+				fill: 'blue',
+				stroke: 'red',
 				id: function(d, i) {
-					return "edgepath" + i;
+					return 'edgepath' + i;
 				}
 			})
-			.style("pointer-events", "none");
+			.style('pointer-events', 'none');
 
-		force.on("tick", function() {
+		force.on('tick', function() {
 			edges.attr({
 				x1: function(d) {
 					return d.source.x;
@@ -168,22 +168,22 @@ A2030Charts.network = {};
 			});
 
 			nodelabels
-				.attr("x", function(d) {
+				.attr('x', function(d) {
 					return d.x;
 				})
-				.attr("y", function(d) {
+				.attr('y', function(d) {
 					return d.y;
 				});
 
-			edgepaths.attr("d", function(d) {
+			edgepaths.attr('d', function(d) {
 				var path =
-					"M " +
+					'M ' +
 					d.source.x +
-					" " +
+					' ' +
 					d.source.y +
-					" L " +
+					' L ' +
 					d.target.x +
-					" " +
+					' ' +
 					d.target.y;
 				//console.log(d)
 				return path;
@@ -192,6 +192,6 @@ A2030Charts.network = {};
 	};
 
 	A2030Charts.network.render = function() {
-		console.log("render A2030Charts.network");
+		console.log('render A2030Charts.network');
 	};
 })(window, document, jQuery, d3);

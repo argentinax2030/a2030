@@ -83,6 +83,10 @@ h1 {
   background-size: cover;
 }
 
+#slide6 {
+  background-color: $darkblue;
+}
+
 .section1 {
   color: #fff;
 }
@@ -104,11 +108,13 @@ h1 {
 .avanzar {
   margin-top: 70px;
 }
-
+/*
+test
+*/
 .headerSlideTwo {
   background: $orangeSlides;
   height: 25px;
-  width: 75%;
+  max-width: 100%;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -155,5 +161,5 @@ p {
 .bigTextSlides {
   font-size: 24px;
   color: #fff;
-  margin-bottom: 50px;
+  /*margin-bottom: 50px;*/
 }
