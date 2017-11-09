@@ -93,7 +93,7 @@ h1 {
 .headerSlideTwo {
   background: $orangeSlides;
   height: 25px;
-  width: 75%;
+  max-width: 80%;
   margin: 0 auto;
   margin-top: 20px;
 }
@@ -140,5 +140,5 @@ p {
 .bigTextSlides {
   font-size: 24px;
   color: #fff;
-  margin-bottom: 50px;
+  /*margin-bottom: 50px;*/
 }
