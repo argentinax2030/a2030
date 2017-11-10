@@ -84,7 +84,31 @@ h1 {
 }
 
 #slide6 {
+  background: url(http://via.placeholder.com/1319x546) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#slide7 {
   background-color: $darkblue;
+}
+
+#slide7 {
+  background-color: $darkblue;
+}
+
+#slide8 {
+  background-color: $darkblue;
+}
+
+#slide9 {
+  background: url(http://via.placeholder.com/1319x546) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 .section1 {
@@ -108,22 +132,12 @@ h1 {
 .avanzar {
   margin-top: 70px;
 }
-/*
-test
-*/
-.headerSlideTwo {
-  background: $orangeSlides;
-  height: 25px;
-  max-width: 100%;
-  margin: 0 auto;
-  margin-top: 20px;
-}
 
-.textSlideTwo {
+.text-slide-two {
   color: #fff;
 }
 
-.marginTopImageSliderTwo {
+.margin-top-image-slider-two {
   margin-top: 30px;
 }
 
@@ -132,13 +146,7 @@ p {
   line-height: 32px;
 }
 
-.titleSlideThree {
-  background: $orangeSlides;
-  height: 25px;
-  max-width: 100%;
-}
-
-.buttonsSlideThree {
+.buttons-slides {
   background-color: $darkblue;
   text-transform: uppercase;
   border: #fff solid 1px;
@@ -158,8 +166,28 @@ p {
   }
 }
 
-.bigTextSlides {
+.big-text-slides {
   font-size: 24px;
   color: #fff;
-  /*margin-bottom: 50px;*/
+}
+
+.icon-two {
+  margin-top: 200px;
+}
+
+.icon-three {
+  margin-top: 100px;
+}
+
+.icon-two-slide-8 {
+  margin-top: 50px;
+}
+
+.icon-three-slide-8 {
+  margin-top: -100px;
+}
+
+.back-color-titles {
+  background-color: $orangeSlides;
+  margin-bottom: 10px;
 }
