@@ -1,6 +1,32 @@
 // bower:scss
 // endbower
 
+@font-face {
+  font-family: "Gotham Black";
+  src: url("../fonts/Gotham-Black.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gotham Bold Regular";
+  src: url("../fonts/Gotham-Bold-Regular.otf") format("opentype"),
+    url("../fonts/Gotham-Bold-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham Bold Italic";
+  src: url("../fonts/Gotham-Bold-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gotham Book";
+  src: url("../fonts/Gotham-Book.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Gotham Light";
+  src: url("../fonts/Gotham-Light.otf") format("opentype");
+}
+
 $darkblue: #172238;
 $orangeSlides: #fbaf3f;
 
@@ -60,6 +86,9 @@ h1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  h1 {
+    font-family: "Gotham Black", sans-serif;
+  }
 }
 
 #slide2 {
@@ -93,14 +122,24 @@ h1 {
 
 #slide7 {
   background-color: $darkblue;
-}
+  .icon-two {
+    margin-top: 200px;
+  }
 
-#slide7 {
-  background-color: $darkblue;
+  .icon-three {
+    margin-top: 100px;
+  }
 }
 
 #slide8 {
   background-color: $darkblue;
+  .icon-two-slide-8 {
+    margin-top: 50px;
+  }
+
+  .icon-three-slide-8 {
+    margin-top: -100px;
+  }
 }
 
 #slide9 {
@@ -171,23 +210,70 @@ p {
   color: #fff;
 }
 
-.icon-two {
-  margin-top: 200px;
-}
-
-.icon-three {
-  margin-top: 100px;
-}
-
-.icon-two-slide-8 {
-  margin-top: 50px;
-}
-
-.icon-three-slide-8 {
-  margin-top: -100px;
-}
-
 .back-color-titles {
   background-color: $orangeSlides;
   margin-bottom: 10px;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  #a2030-container {
+    &.aspect-ratio {
+      @include aspect-ratio(16, 9);
+    }
+  }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  #a2030-container {
+    &.aspect-ratio {
+      @include aspect-ratio(4, 3);
+    }
+  }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  #a2030-container {
+    &.aspect-ratio {
+      @include aspect-ratio(3, 4);
+    }
+  }
+  #slide7 {
+    .icon-two {
+      margin-top: 0px;
+    }
+    .icon-three {
+      margin-top: 0px;
+    }
+  }
+
+  #slide8 {
+    .icon-two-slide-8 {
+      margin-top: 0px;
+    }
+
+    .icon-three-slide-8 {
+      margin-top: 0px;
+    }
+  }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  #a2030-container {
+    &.aspect-ratio {
+      @include aspect-ratio(3, 5);
+    }
+  }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  #a2030-container {
+    &.aspect-ratio {
+      @include aspect-ratio(3, 8);
+    }
+  }
 }
