@@ -96,14 +96,8 @@ h1 {
   }
 }
 
-#slide2 {
-  background-color: $darkblue;
-}
-
-#slide3 {
-  background-color: $darkblue;
-}
-
+#slide2,
+#slide3,
 #slide4 {
   background-color: $darkblue;
 }
@@ -303,6 +297,19 @@ p {
     &.aspect-ratio {
       @include aspect-ratio(3, 5);
     }
+  }
+  #slide5,
+  #slide6,
+  #slide9 {
+    .text-photos {
+      font-size: 25px;
+    }
+  }
+  .left-text {
+    font-size: 15px;
+  }
+  .titles-slide {
+    font-size: 15px;
   }
 }
 
