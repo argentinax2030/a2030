@@ -88,6 +88,11 @@ h1 {
   background-size: cover;
   h1 {
     font-family: "Gotham Black", sans-serif;
+    font-size: 67px;
+  }
+  p {
+    font-family: "Gotham Light", sans-serif;
+    font-size: 24px;
   }
 }
 
@@ -104,8 +109,7 @@ h1 {
 }
 
 #slide5 {
-  background: url(http://via.placeholder.com/1319x546) no-repeat center center
-    fixed;
+  background: url(../images/slide5_fondo.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -113,7 +117,7 @@ h1 {
 }
 
 #slide6 {
-  background: url(http://via.placeholder.com/1319x546) no-repeat center center;
+  background: url(../images/slide6_fondo.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -129,6 +133,15 @@ h1 {
   .icon-three {
     margin-top: 100px;
   }
+  .change-image-one:hover {
+    content: url(../images/BOT1b7.png);
+  }
+  .change-image-two:hover {
+    content: url(../images/BOT2b7.png);
+  }
+  .change-image-three:hover {
+    content: url(../images/BOT3b7.png);
+  }
 }
 
 #slide8 {
@@ -140,10 +153,22 @@ h1 {
   .icon-three-slide-8 {
     margin-top: -100px;
   }
+  .change-image-one:hover {
+    content: url(../images/BOT2b.png);
+  }
+  .change-image-two:hover {
+    content: url(../images/BOT4b.png);
+  }
+  .change-image-three:hover {
+    content: url(../images/BOT1b.png);
+  }
+  .change-image-four:hover {
+    content: url(../images/BOT3b.png);
+  }
 }
 
 #slide9 {
-  background: url(http://via.placeholder.com/1319x546) no-repeat center center;
+  background: url(../images/slide9A_fondo.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -172,10 +197,6 @@ h1 {
   margin-top: 70px;
 }
 
-.text-slide-two {
-  color: #fff;
-}
-
 .margin-top-image-slider-two {
   margin-top: 30px;
 }
@@ -193,8 +214,11 @@ p {
   padding: 2px 10px;
   text-align: center;
   display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
+  font-family: "Gotham Light", sans-serif;
+  font-size: 11px;
+  background: $darkblue;
+  text-transform: uppercase;
+  margin: 10px;
   cursor: pointer;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -205,14 +229,27 @@ p {
   }
 }
 
-.big-text-slides {
-  font-size: 24px;
+.text-photos {
+  font-family: "Gotham Book", sans-serif;
+  font-size: 30px;
   color: #fff;
 }
 
 .back-color-titles {
   background-color: $orangeSlides;
   margin-bottom: 10px;
+}
+
+.titles-slide {
+  font-family: "Gotham Book", sans-serif;
+  font-size: 18px;
+  color: #172238;
+}
+
+.left-text {
+  font-family: "Gotham light", sans-serif;
+  font-size: 20px;
+  color: #fff;
 }
 
 /* Large Devices, Wide Screens */
