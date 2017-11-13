@@ -208,4 +208,5 @@ var A2030;
 //Init
 $(document).ready(function() {
   A2030.init();
+  $('[data-toggle="popover"]').popover();
 });

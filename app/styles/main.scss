@@ -173,20 +173,6 @@ h1 {
   color: #fff;
 }
 
-.Aligner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Aligner-item {
-  max-width: 100%;
-}
-
-.Aligner-item--bottom {
-  align-self: flex-end;
-}
-
 .avanzar {
   margin-top: 70px;
 }
@@ -244,6 +230,33 @@ p {
   font-family: "Gotham light", sans-serif;
   font-size: 20px;
   color: #fff;
+}
+
+.popover-title {
+  font-family: "Gotham Book", sans-serif;
+  font-size: 22px;
+  color: #00addb;
+  background: $darkblue;
+  opacity: 0.85;
+  border: none;
+}
+
+.popover-content {
+  font-family: "Gotham Light", sans-serif;
+  font-size: 18px;
+  color: #fff;
+  background: $darkblue;
+  opacity: 0.85;
+  border: none;
+}
+
+.popover {
+  padding: 0px;
+  border: 0px;
+}
+
+.arrow {
+  visibility: hidden;
 }
 
 /* Large Devices, Wide Screens */
