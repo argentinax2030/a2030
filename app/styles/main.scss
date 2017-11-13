@@ -29,8 +29,8 @@
 
 $darkblue: #172238;
 $orangeSlides: #fbaf3f;
-
 $ligthblue: #33ccff;
+$anotherblue: #0f5c91;
 
 @mixin aspect-ratio($width, $height) {
   position: relative;
@@ -62,6 +62,53 @@ $ligthblue: #33ccff;
         stroke-opacity: 0.5;
       }
     }
+  }
+}
+
+.c3-legend-item {
+  & text {
+    fill: #fff;
+  }
+}
+.c3-chart-line {
+  &.c3-target {
+    & .c3-line {
+      stroke-width: 3px;
+    }
+  }
+  &.c3-focused {
+    & .c3-line {
+      stroke-width: 5px !important;
+      stroke: $orangeSlides !important;
+    }
+  }
+  &.c3-defocused {
+    & .c3-line {
+      stroke-width: 3px;
+    }
+  }
+}
+
+.c3-axis-y,
+.c3-axis-x {
+  & .tick {
+    & text {
+      fill: $anotherblue;
+      font-size: 12px;
+    }
+    & line {
+      stroke: $anotherblue;
+    }
+  }
+  & .domain {
+    stroke: $anotherblue;
+  }
+}
+
+.c3-ygrids {
+  & .c3-ygrid {
+    stroke: $anotherblue;
+    stroke-dasharray: 0;
   }
 }
 
@@ -224,6 +271,7 @@ p {
   font-family: "Gotham Book", sans-serif;
   font-size: 18px;
   color: #172238;
+  margin: 0;
 }
 
 .left-text {

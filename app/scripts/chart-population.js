@@ -27,10 +27,40 @@ A2030Charts.population = {};
 				bindto: A2030Charts.population.parent,
 				data: {
 					x: 'x',
-					columns: A2030Charts.population.data
+					columns: A2030Charts.population.data,
+					color: function(color, d) {
+						return '#fff';
+					}
+				},
+				point: {
+					show: false
 				},
 				axis: {
-					x: {}
+					y: {
+						tick: {
+							values: [5, 10, 15, 20, 25, 30]
+						},
+						min: 0,
+						max: 30,
+						padding: {
+							bottom: 0,
+							top: 10
+						}
+					},
+					x: {
+						padding: {
+							left: 1,
+							right: 1
+						}
+					}
+				},
+				grid: {
+					x: {
+						show: false
+					},
+					y: {
+						show: true
+					}
 				}
 			});
 		}

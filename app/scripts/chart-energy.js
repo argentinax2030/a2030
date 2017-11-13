@@ -26,10 +26,40 @@ A2030Charts.energy = {};
 				bindto: A2030Charts.energy.parent,
 				data: {
 					x: 'x',
-					columns: A2030Charts.energy.data
+					columns: A2030Charts.energy.data,
+					color: function(color, d) {
+						return '#fff';
+					}
+				},
+				point: {
+					show: false
 				},
 				axis: {
-					x: {}
+					y: {
+						tick: {
+							values: [0, 50, 100, 150, 200, 250]
+						},
+						min: 0,
+						max: 250,
+						padding: {
+							bottom: 0,
+							top: 10
+						}
+					},
+					x: {
+						padding: {
+							left: 1,
+							right: 1
+						}
+					}
+				},
+				grid: {
+					x: {
+						show: false
+					},
+					y: {
+						show: true
+					}
 				}
 			});
 		}
