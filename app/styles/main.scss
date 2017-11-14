@@ -112,9 +112,6 @@ $anotherblue: #0f5c91;
   }
 }
 
-#controls {
-}
-
 #timer {
   width: 100%;
   height: 5px;
@@ -140,13 +137,48 @@ h1 {
   p {
     font-family: "Gotham Light", sans-serif;
     font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .pp-tableCell {
+    vertical-align: bottom;
+  }
+  .row-home {
+    display: flex;
+    align-items: stretch;
+    flex-direction: row;
+  }
+  .avanzar {
+    cursor: pointer;
+    animation: blinker 2s linear infinite;
+    display: flex;
+    flex-direction: row;
+
+    &:hover {
+      animation: blinker 0.5s linear infinite;
+    }
+    #btn-avanzar {
+      align-self: center;
+    }
   }
 }
 
-#slide2,
-#slide3,
+#slide2 {
+  background-color: $darkblue;
+  .pp-tableCell {
+    vertical-align: top;
+  }
+}
+#slide3 {
+  background-color: $darkblue;
+  .pp-tableCell {
+    vertical-align: top;
+  }
+}
 #slide4 {
   background-color: $darkblue;
+  .pp-tableCell {
+    vertical-align: top;
+  }
 }
 
 #slide5 {
@@ -155,6 +187,9 @@ h1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  .pp-tableCell {
+    vertical-align: bottom;
+  }
 }
 
 #slide6 {
@@ -163,6 +198,9 @@ h1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  .pp-tableCell {
+    vertical-align: bottom;
+  }
 }
 
 #slide7 {
@@ -214,14 +252,19 @@ h1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  .pp-tableCell {
+    vertical-align: bottom;
+  }
 }
 
 .section1 {
   color: #fff;
 }
 
-.avanzar {
-  margin-top: 70px;
+@keyframes blinker {
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .margin-top-image-slider-two {
@@ -257,21 +300,24 @@ p {
 }
 
 .text-photos {
-  font-family: "Gotham Book", sans-serif;
+  font-family: "Gotham Light", sans-serif;
   font-size: 30px;
   color: #fff;
+  margin: 0px 50px 50px 0px;
+  line-height: 1.5em;
+  text-align: right;
 }
 
 .back-color-titles {
   background-color: $orangeSlides;
-  margin-bottom: 10px;
 }
 
 .titles-slide {
   font-family: "Gotham Book", sans-serif;
   font-size: 18px;
   color: #172238;
-  margin: 0;
+  margin: 30px 0;
+  padding: 0 15px;
 }
 
 .left-text {
@@ -305,6 +351,50 @@ p {
 
 .arrow {
   visibility: hidden;
+}
+
+#pp-nav {
+  ul {
+    li {
+      height: 23px;
+      .active {
+        span {
+          background: #fff;
+        }
+      }
+      &:hover {
+        span {
+          background: $anotherblue;
+        }
+      }
+      a {
+        span {
+          transition: background 0.5s ease;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+  #controls {
+    margin: 9px;
+    .btn-control {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
+      background-color: #fff;
+      margin-right: 10px;
+      cursor: pointer;
+      color: $darkblue;
+      text-align: center;
+      font-size: 17px;
+      transition: background-color 0.5s ease;
+      &:hover {
+        background-color: $anotherblue;
+      }
+    }
+  }
 }
 
 /* Large Devices, Wide Screens */

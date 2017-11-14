@@ -12,6 +12,7 @@ var A2030;
   A2030.intervalTime = 4 * 1000;
   A2030.intervalId = null;
   A2030.$timer = $('#timer');
+  A2030.$container = $('#a2030-container');
 
   A2030.onLeave = function(index, nextIndex, direction) {
     if ($.isFunction(A2030.onLeaveFunctions['slide-' + index])) {
@@ -35,14 +36,18 @@ var A2030;
     A2030.afterLoadFunctions['slide-1'].call();
     A2030.currentIndex = 1;
 
-    $('#pp-nav').append(
-      '<div id=\'controls\'><div id=\'play\'>play</div> - <div id=\'pause\'>pause</div> // <div id=\'next\'>next</div> - <div id=\'prev\'>prev</div></div>'
-    );
+    //var controlsHTML = '<div id=\'controls\'><div id=\'play\'>play</div> - <div id=\'pause\'>pause</div> // <div id=\'next\'>next</div> - <div id=\'prev\'>prev</div></div>';
+    var controlsHTML =
+      '<div id=\'controls\'><div id=\'prev\' class=\'btn-control\'>&#9664;</div><div id=\'next\' class=\'btn-control\'>&#9654;</div></div>';
+
+    $('#pp-nav').append(controlsHTML);
     A2030.$controls = $('#controls').fadeOut();
-    A2030.$controls.find('#play').on('click touchstart', A2030.play);
-    A2030.$controls.find('#pause').on('click touchstart', A2030.pause);
+    //A2030.$controls.find('#play').on('click touchstart', A2030.play);
+    //A2030.$controls.find('#pause').on('click touchstart', A2030.pause);
     A2030.$controls.find('#next').on('click touchstart', A2030.next);
     A2030.$controls.find('#prev').on('click touchstart', A2030.prev);
+
+    A2030.$container.find('#btn-avanzar').on('click touchstart', A2030.next);
 
     A2030Charts.lines.init();
   };

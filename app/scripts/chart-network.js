@@ -48,7 +48,7 @@ A2030Charts.network = {};
 			.getBoundingClientRect();
 
 		var w = sizes.width;
-		var h = 200;
+		var h = 300;
 		var linkDistance = 10;
 
 		if (!A2030Charts.network.svg) {
