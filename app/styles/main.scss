@@ -59,7 +59,7 @@ $anotherblue: #0f5c91;
       line.floating-lines {
         stroke: $ligthblue;
         stroke-width: 1;
-        stroke-opacity: 0.5;
+        stroke-opacity: 0.2;
       }
     }
   }
@@ -89,12 +89,29 @@ $anotherblue: #0f5c91;
   }
 }
 
+.c3-tooltip-container {
+  font-family: "Gotham Light";
+  .c3-tooltip {
+    tr {
+      th {
+        background: $orangeSlides;
+        color: $darkblue;
+      }
+      td.name {
+      }
+      td.value {
+      }
+    }
+  }
+}
+
 .c3-axis-y,
 .c3-axis-x {
   & .tick {
     & text {
       fill: $anotherblue;
       font-size: 12px;
+      font-family: "Gotham Light";
     }
     & line {
       stroke: $anotherblue;
@@ -205,13 +222,21 @@ h1 {
 
 #slide7 {
   background-color: $darkblue;
-  .icon-two {
+  .img-popover {
+    text-align: center;
+    img {
+      margin: 0 auto;
+      &.icon-two {
+        margin-top: 200px;
+      }
+    }
+  }
+  /*  .icon-two {
     margin-top: 200px;
   }
-
   .icon-three {
     margin-top: 100px;
-  }
+  }*/
   .change-image-one:hover {
     content: url(../images/BOT1b7.png);
   }
@@ -225,13 +250,22 @@ h1 {
 
 #slide8 {
   background-color: $darkblue;
-  .icon-two-slide-8 {
-    margin-top: 50px;
+
+  .img-popover {
+    text-align: center;
+    img {
+      margin: 0 auto;
+      &.icon-two-slide-8 {
+        margin-top: 50px;
+      }
+
+      &.icon-three-slide-8 {
+        margin-top: -100px;
+      }
+    }
   }
 
-  .icon-three-slide-8 {
-    margin-top: -100px;
-  }
+  /**/
   .change-image-one:hover {
     content: url(../images/BOT2b.png);
   }
@@ -374,6 +408,15 @@ p {
           width: 20px;
           height: 20px;
         }
+      }
+      .pp-tooltip {
+        background-color: $orangeSlides;
+        top: -2px;
+        left: 40px;
+        padding: 3px 5px;
+        font-family: "Gotham Book", sans-serif;
+        font-size: 15px;
+        color: $darkblue;
       }
     }
   }

@@ -117,7 +117,17 @@ var A2030;
         textColor: '#fff',
         bulletsColor: '#fff',
         position: 'left',
-        tooltips: []
+        tooltips: [
+          'Estamos en 2030',
+          'Revolución Industrial',
+          'Demanda energética',
+          'Bono demográfico',
+          'Desafíos',
+          'Argentina 2030',
+          'Equipo',
+          'Ejes de trabajo',
+          'Camino a 2030'
+        ]
       },
       normalScrollElements: null,
       normalScrollElementTouchThreshold: 5,
@@ -158,9 +168,11 @@ var A2030;
     },
     'slide-7': function() {
       console.log('onLeave 7');
+      $('#slide7 [data-toggle="popover"]').popover('hide');
     },
     'slide-8': function() {
       console.log('onLeave 8');
+      $('#slide8 [data-toggle="popover"]').popover('hide');
     },
     'slide-9': function() {
       console.log('onLeave 9');
@@ -175,7 +187,9 @@ var A2030;
     'slide-2': function() {
       console.log('afterLoad 2');
       A2030Charts.lines.randomize();
-      A2030Charts.network.init();
+      var w = $('#a2030-container').width();
+      A2030Charts.lines.render([0, 0, 0, 0, 0, w, w, w, w, w]);
+      //A2030Charts.network.init();
     },
     'slide-3': function() {
       console.log('afterLoad 3');
@@ -198,10 +212,16 @@ var A2030;
     'slide-7': function() {
       console.log('afterLoad 7');
       A2030Charts.lines.randomize();
+      $('#slide7 [data-toggle="popover"]')
+        .first()
+        .popover('show');
     },
     'slide-8': function() {
       console.log('afterLoad 8');
       A2030Charts.lines.randomize();
+      $('#slide8 [data-toggle="popover"]')
+        .first()
+        .popover('show');
     },
     'slide-9': function() {
       console.log('afterLoad 9');
