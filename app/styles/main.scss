@@ -294,7 +294,8 @@ p {
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
-  &:hover {
+  &:hover,
+  &.selected {
     background: $orangeSlides;
   }
 }

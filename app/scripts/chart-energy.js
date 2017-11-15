@@ -19,8 +19,6 @@ A2030Charts.energy = {};
 	];
 
 	A2030Charts.energy.init = function() {
-		console.log('init A2030Charts.energy');
-
 		if (!A2030Charts.energy.chart) {
 			A2030Charts.energy.chart = c3.generate({
 				bindto: A2030Charts.energy.parent,
@@ -32,6 +30,9 @@ A2030Charts.energy = {};
 					}
 				},
 				point: {
+					show: false
+				},
+				legend: {
 					show: false
 				},
 				axis: {
@@ -60,6 +61,53 @@ A2030Charts.energy = {};
 					y: {
 						show: true
 					}
+				},
+				oninit: function() {
+					setTimeout(function() {
+						A2030Charts.energy.chart.focus(['Líquidos']);
+					}, 500);
+
+					var labelsText = A2030Charts.energy.data.map(function(e) {
+						return e[0];
+					});
+
+					labelsText.shift();
+
+					d3
+						.select('#chart-energy-labels')
+						.selectAll('button.buttons-slides')
+						.data(labelsText)
+						.enter()
+						.append('button')
+						.classed('buttons-slides', true)
+						.classed('selected', function(id) {
+							return id == 'Líquidos';
+						})
+						.attr('data-id', function(id) {
+							return id;
+						})
+						.html(function(id) {
+							return id;
+						})
+						.each(function(id) {
+							//d3.select(this).style('background-color', chart.color(id));
+						})
+						.on('mouseover', function(id) {
+							A2030Charts.energy.chart.focus(id);
+							$('button[data-id="Líquidos"]').removeClass(
+								'selected'
+							);
+						})
+						.on('mouseout', function(id) {
+							A2030Charts.energy.chart.revert();
+							A2030Charts.energy.chart.focus(['Líquidos']);
+							$('button[data-id="Líquidos"]').addClass(
+								'selected'
+							);
+						})
+						.on('click', function(id) {
+							A2030Charts.energy.chart.focus(id);
+						});
 				}
 			});
 		}

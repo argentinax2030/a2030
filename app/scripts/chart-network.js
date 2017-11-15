@@ -23,17 +23,19 @@ A2030Charts.network = {};
 			{ name: 'Blockchain' }
 		],
 		edges: [
-			{ source: 0, target: 1 },
-			{ source: 0, target: 2 },
+			{ source: 3, target: 1 },
 			{ source: 0, target: 3 },
 			{ source: 0, target: 4 },
 			{ source: 1, target: 5 },
 			{ source: 2, target: 5 },
-			{ source: 2, target: 5 },
+			{ source: 2, target: 1 },
 			{ source: 3, target: 4 },
 			{ source: 5, target: 8 },
 			{ source: 5, target: 9 },
 			{ source: 6, target: 7 },
+			{ source: 6, target: 0 },
+			{ source: 7, target: 0 },
+			{ source: 3, target: 5 },
 			{ source: 7, target: 8 },
 			{ source: 8, target: 9 }
 		]
@@ -48,8 +50,8 @@ A2030Charts.network = {};
 			.getBoundingClientRect();
 
 		var w = sizes.width;
-		var h = 300;
-		var linkDistance = 10;
+		var h = 400;
+		var linkDistance = 40;
 
 		if (!A2030Charts.network.svg) {
 			A2030Charts.network.svg = d3
@@ -66,8 +68,8 @@ A2030Charts.network = {};
 			.links(A2030Charts.network.data.edges)
 			.size([w, h])
 			.linkDistance([linkDistance])
-			.charge([-500])
-			.theta(0.1)
+			.charge([-800])
+			.theta(0.5)
 			.gravity(0.05)
 			.start();
 
@@ -79,8 +81,7 @@ A2030Charts.network = {};
 			.attr('id', function(d, i) {
 				return 'edge' + i;
 			})
-			.attr('marker-end', 'url(#arrowhead)')
-			.style('stroke', '#ccc')
+			.style('stroke', '#1886c7')
 			.style('pointer-events', 'none');
 
 		var nodes = A2030Charts.network.svg
@@ -88,7 +89,7 @@ A2030Charts.network = {};
 			.data(A2030Charts.network.data.nodes)
 			.enter()
 			.append('circle')
-			.attr({ r: 3 })
+			.attr({ r: 5 })
 			.style('fill', function(d, i) {
 				return '#1886c7';
 			})
@@ -100,14 +101,9 @@ A2030Charts.network = {};
 			.enter()
 			.append('text')
 			.attr({
-				x: function(d) {
-					return d.x;
-				},
-				y: function(d) {
-					return d.y;
-				},
 				class: 'nodelabel',
-				stroke: '#1886c7'
+				stroke: 'none',
+				fill: '#fff'
 			})
 			.text(function(d) {
 				return d.name;
@@ -169,10 +165,10 @@ A2030Charts.network = {};
 
 			nodelabels
 				.attr('x', function(d) {
-					return d.x;
+					return d.x + 7;
 				})
 				.attr('y', function(d) {
-					return d.y;
+					return d.y + 5;
 				});
 
 			edgepaths.attr('d', function(d) {
@@ -189,9 +185,11 @@ A2030Charts.network = {};
 				return path;
 			});
 		});
+
+		setInterval(function() {
+			force.alpha(0.1);
+		}, 2000);
 	};
 
-	A2030Charts.network.render = function() {
-		console.log('render A2030Charts.network');
-	};
+	A2030Charts.network.render = function() {};
 })(window, document, jQuery, d3);

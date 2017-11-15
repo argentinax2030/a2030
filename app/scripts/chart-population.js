@@ -20,8 +20,6 @@ A2030Charts.population = {};
 	];
 
 	A2030Charts.population.init = function() {
-		console.log('init A2030Charts.population');
-
 		if (!A2030Charts.population.chart) {
 			A2030Charts.population.chart = c3.generate({
 				bindto: A2030Charts.population.parent,
@@ -61,6 +59,56 @@ A2030Charts.population = {};
 					y: {
 						show: true
 					}
+				},
+				legend: {
+					show: false
+				},
+				oninit: function() {
+					setTimeout(function() {
+						A2030Charts.population.chart.focus(['Europa']);
+					}, 500);
+
+					var labelsText = A2030Charts.population.data.map(function(
+						e
+					) {
+						return e[0];
+					});
+
+					labelsText.shift();
+
+					d3
+						.select('#chart-population-labels')
+						.selectAll('button.buttons-slides')
+						.data(labelsText)
+						.enter()
+						.append('button')
+						.classed('buttons-slides', true)
+						.classed('selected', function(id) {
+							return id == 'Europa';
+						})
+						.attr('data-id', function(id) {
+							return id;
+						})
+						.html(function(id) {
+							return id;
+						})
+						.each(function(id) {
+							//d3.select(this).style('background-color', chart.color(id));
+						})
+						.on('mouseover', function(id) {
+							A2030Charts.population.chart.focus(id);
+							$('button[data-id="Europa"]').removeClass(
+								'selected'
+							);
+						})
+						.on('mouseout', function(id) {
+							A2030Charts.population.chart.revert();
+							A2030Charts.population.chart.focus(['Europa']);
+							$('button[data-id="Europa"]').addClass('selected');
+						})
+						.on('click', function(id) {
+							A2030Charts.population.chart.focus(id);
+						});
 				}
 			});
 		}
