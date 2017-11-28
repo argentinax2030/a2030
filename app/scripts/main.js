@@ -148,83 +148,62 @@ var A2030;
   };
 
   A2030.onLeaveFunctions = {
-    'slide-1': function() {
-      console.log('onLeave 1');
-    },
-    'slide-2': function() {
-      console.log('onLeave 2');
-    },
-    'slide-3': function() {
-      console.log('onLeave 3');
-    },
-    'slide-4': function() {
-      console.log('onLeave 4');
-    },
-    'slide-5': function() {
-      console.log('onLeave 5');
-    },
-    'slide-6': function() {
-      console.log('onLeave 6');
-    },
+    'slide-1': function() {},
+    'slide-2': function() {},
+    'slide-3': function() {},
+    'slide-4': function() {},
+    'slide-5': function() {},
+    'slide-6': function() {},
     'slide-7': function() {
-      console.log('onLeave 7');
       $('#slide7 [data-toggle="popover"]').popover('hide');
     },
     'slide-8': function() {
-      console.log('onLeave 8');
       $('#slide8 [data-toggle="popover"]').popover('hide');
     },
-    'slide-9': function() {
-      console.log('onLeave 9');
-    }
+    'slide-9': function() {}
   };
 
   A2030.afterLoadFunctions = {
     'slide-1': function() {
-      console.log('afterLoad 1');
       A2030Charts.lines.randomize();
     },
     'slide-2': function() {
-      console.log('afterLoad 2');
-      A2030Charts.lines.randomize();
+      //A2030Charts.lines.randomize();
       var w = $('#a2030-container').width();
       A2030Charts.lines.render([0, 0, 0, 0, 0, w, w, w, w, w]);
       //A2030Charts.network.init();
     },
     'slide-3': function() {
-      console.log('afterLoad 3');
-      A2030Charts.lines.randomize();
       A2030Charts.energy.init();
     },
     'slide-4': function() {
-      console.log('afterLoad 4');
-      A2030Charts.lines.randomize();
       A2030Charts.population.init();
     },
     'slide-5': function() {
-      console.log('afterLoad 5');
       A2030Charts.lines.randomize();
     },
     'slide-6': function() {
-      console.log('afterLoad 6');
       A2030Charts.lines.randomize();
     },
     'slide-7': function() {
-      console.log('afterLoad 7');
       A2030Charts.lines.randomize();
-      $('#slide7 [data-toggle="popover"]')
-        .first()
-        .popover('show');
+      $('#slide7 [data-toggle="popover"]').each(function(i) {
+        var el = $(this);
+        setTimeout(function() {
+          el.popover('show');
+        }, i * 1000);
+      });
     },
     'slide-8': function() {
-      console.log('afterLoad 8');
       A2030Charts.lines.randomize();
-      $('#slide8 [data-toggle="popover"]')
-        .first()
-        .popover('show');
+      $('#slide8 [data-toggle="popover"]').each(function(i) {
+        var el = $(this);
+        setTimeout(function() {
+          el.popover('show');
+        }, i * 1000);
+      });
     },
     'slide-9': function() {
-      console.log('afterLoad 9');
       A2030Charts.lines.randomize();
     }
   };

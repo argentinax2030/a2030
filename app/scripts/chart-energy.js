@@ -18,6 +18,19 @@ A2030Charts.energy = {};
 		['Otros', 60.4, 63.8, 87.0, 98.8, 108.1, 119.5, 131.4]
 	];
 
+	A2030Charts.energy.setLines = function() {
+		var ticks = [];
+		$('#slide3 .c3-axis-x .tick line').each(function(i, e) {
+			if (i < 6) {
+				ticks.push(e.getBoundingClientRect().x);
+			} else {
+				ticks.push(0);
+			}
+		});
+		console.log('ticks', $('#slide3 .c3-axis-x .tick line'));
+		A2030Charts.lines.render(ticks);
+	};
+
 	A2030Charts.energy.init = function() {
 		if (!A2030Charts.energy.chart) {
 			A2030Charts.energy.chart = c3.generate({
@@ -48,6 +61,9 @@ A2030Charts.energy = {};
 						}
 					},
 					x: {
+						tick: {
+							values: [2011, 2020, 2025, 2030, 2035, 2040]
+						},
 						padding: {
 							left: 1,
 							right: 1
@@ -65,6 +81,7 @@ A2030Charts.energy = {};
 				oninit: function() {
 					setTimeout(function() {
 						A2030Charts.energy.chart.focus(['Líquidos']);
+						A2030Charts.energy.setLines();
 					}, 500);
 
 					var labelsText = A2030Charts.energy.data.map(function(e) {
@@ -110,6 +127,8 @@ A2030Charts.energy = {};
 						});
 				}
 			});
+		} else {
+			A2030Charts.energy.setLines();
 		}
 	};
 })(window, document, jQuery, d3);

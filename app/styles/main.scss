@@ -310,6 +310,11 @@ p {
   line-height: 32px;
 }
 
+#chart-energy-labels,
+#chart-population-labels {
+  margin-left: 30px;
+}
+
 .buttons-slides {
   background-color: $darkblue;
   text-transform: uppercase;
@@ -351,7 +356,10 @@ p {
   font-family: "Gotham Book", sans-serif;
   font-size: 18px;
   color: #172238;
-  margin: 30px 0;
+  margin: 30px;
+  &.chart-title-slide {
+    margin: 30px 0px 30px 40px;
+  }
   padding: 0 15px;
 }
 

@@ -19,6 +19,18 @@ A2030Charts.population = {};
 		['Oceania', 12.5, 16.2, 19.5]
 	];
 
+	A2030Charts.population.setLines = function() {
+		var ticks = [];
+		$('#slide4 .c3-axis-x .tick line').each(function(i, e) {
+			if (i < 3) {
+				ticks.push(e.getBoundingClientRect().x);
+			} else {
+				ticks.push(0);
+			}
+		});
+		A2030Charts.lines.render(ticks);
+	};
+
 	A2030Charts.population.init = function() {
 		if (!A2030Charts.population.chart) {
 			A2030Charts.population.chart = c3.generate({
@@ -66,6 +78,7 @@ A2030Charts.population = {};
 				oninit: function() {
 					setTimeout(function() {
 						A2030Charts.population.chart.focus(['Europa']);
+						A2030Charts.population.setLines();
 					}, 500);
 
 					var labelsText = A2030Charts.population.data.map(function(
@@ -111,6 +124,8 @@ A2030Charts.population = {};
 						});
 				}
 			});
+		} else {
+			A2030Charts.population.setLines();
 		}
 	};
 })(window, document, jQuery, d3);
