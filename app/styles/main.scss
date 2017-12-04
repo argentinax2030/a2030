@@ -462,7 +462,7 @@ p {
 @media only screen and (max-width: 992px) {
   #a2030-container {
     &.aspect-ratio {
-      @include aspect-ratio(4, 3);
+      @include aspect-ratio(16, 9);
     }
   }
 }
@@ -490,6 +490,51 @@ p {
 
     .icon-three-slide-8 {
       margin-top: 0px;
+    }
+  }
+  #pp-nav {
+    &.left {
+      left: 10px;
+    }
+    ul {
+      li {
+        height: 15px;
+        a {
+          span {
+            transition: background 0.5s ease;
+            width: 10px;
+            height: 10px;
+          }
+        }
+        .pp-tooltip {
+          background-color: $orangeSlides;
+          top: -2px;
+          left: 40px;
+          padding: 3px 5px;
+          font-family: "Gotham Book", sans-serif;
+          font-size: 15px;
+          color: $darkblue;
+        }
+      }
+    }
+    #controls {
+      margin: 9px;
+      .btn-control {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        border-radius: 5px;
+        background-color: #fff;
+        margin-right: 10px;
+        cursor: pointer;
+        color: $darkblue;
+        text-align: center;
+        font-size: 17px;
+        transition: background-color 0.5s ease;
+        &:hover {
+          background-color: $anotherblue;
+        }
+      }
     }
   }
 }
