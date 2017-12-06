@@ -261,11 +261,11 @@ h1 {
 
       &.icon-three-slide-8 {
         margin-top: -100px;
+        margin-left: 30px;
       }
     }
   }
 
-  /**/
   .change-image-one:hover {
     content: url(../images/BOT2b.png);
   }
@@ -474,98 +474,114 @@ p {
       @include aspect-ratio(3, 4);
     }
   }
+
   #slide7 {
-    .icon-two {
-      margin-top: 0px;
-    }
-    .icon-three {
-      margin-top: 0px;
-    }
-  }
-
-  #slide8 {
-    .icon-two-slide-8 {
-      margin-top: 0px;
+    .img-popover {
+      img {
+        &.icon-two {
+          margin: 0 auto;
+        }
+      }
     }
 
-    .icon-three-slide-8 {
-      margin-top: 0px;
+    #slide8 {
+      .img-popover {
+        margin-left: -10px;
+      }
+      icon-three-slide-8 {
+        margin: 0;
+      }
     }
-  }
-  #pp-nav {
-    &.left {
-      left: 10px;
-    }
-    ul {
-      li {
-        height: 15px;
-        a {
-          span {
-            transition: background 0.5s ease;
-            width: 10px;
-            height: 10px;
+
+    #pp-nav {
+      &.left {
+        left: 10px;
+      }
+      ul {
+        li {
+          height: 15px;
+          a {
+            span {
+              transition: background 0.5s ease;
+              width: 10px;
+              height: 10px;
+            }
+          }
+          .pp-tooltip {
+            background-color: $orangeSlides;
+            top: -2px;
+            left: 40px;
+            padding: 3px 5px;
+            font-family: "Gotham Book", sans-serif;
+            font-size: 15px;
+            color: $darkblue;
           }
         }
-        .pp-tooltip {
-          background-color: $orangeSlides;
-          top: -2px;
-          left: 40px;
-          padding: 3px 5px;
-          font-family: "Gotham Book", sans-serif;
-          font-size: 15px;
+      }
+      #controls {
+        margin: 9px;
+        .btn-control {
+          display: inline-block;
+          width: 22px;
+          height: 22px;
+          border-radius: 5px;
+          background-color: #fff;
+          margin-right: 10px;
+          cursor: pointer;
           color: $darkblue;
-        }
-      }
-    }
-    #controls {
-      margin: 9px;
-      .btn-control {
-        display: inline-block;
-        width: 22px;
-        height: 22px;
-        border-radius: 5px;
-        background-color: #fff;
-        margin-right: 10px;
-        cursor: pointer;
-        color: $darkblue;
-        text-align: center;
-        font-size: 17px;
-        transition: background-color 0.5s ease;
-        &:hover {
-          background-color: $anotherblue;
+          text-align: center;
+          font-size: 17px;
+          transition: background-color 0.5s ease;
+          &:hover {
+            background-color: $anotherblue;
+          }
         }
       }
     }
   }
-}
 
-/* Extra Small Devices, Phones */
-@media only screen and (max-width: 480px) {
-  #a2030-container {
-    &.aspect-ratio {
-      @include aspect-ratio(3, 5);
+  /* Extra Small Devices, Phones */
+  @media only screen and (max-width: 480px) {
+    #a2030-container {
+      &.aspect-ratio {
+        @include aspect-ratio(3, 5);
+      }
+    }
+    #slide1 {
+      .avanzar {
+        img {
+          display: none;
+        }
+      }
+    }
+    #slide5,
+    #slide6,
+    #slide9 {
+      .text-photos {
+        font-size: 25px;
+      }
+    }
+    .left-text {
+      font-size: 15px;
+    }
+    .titles-slide {
+      font-size: 15px;
     }
   }
-  #slide5,
-  #slide6,
-  #slide9 {
-    .text-photos {
-      font-size: 25px;
-    }
-  }
-  .left-text {
-    font-size: 15px;
-  }
-  .titles-slide {
-    font-size: 15px;
-  }
-}
 
-/* Custom, iPhone Retina */
-@media only screen and (max-width: 320px) {
-  #a2030-container {
-    &.aspect-ratio {
-      @include aspect-ratio(3, 8);
+  /* Custom, iPhone Retina */
+  @media only screen and (max-width: 320px) {
+    #a2030-container {
+      &.aspect-ratio {
+        @include aspect-ratio(3, 8);
+      }
+    }
+    #slide1 {
+      .avanzar {
+        img {
+          display: none;
+        }
+      }
     }
   }
 }
