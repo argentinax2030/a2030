@@ -155,10 +155,14 @@ var A2030;
     'slide-5': function() {},
     'slide-6': function() {},
     'slide-7': function() {
-      $('#slide7 [data-toggle="popover"]').popover('hide');
+      setTimeout(function() {
+        $('#slide7 [data-toggle="popover"]').popover('hide');
+      }, 500);
     },
     'slide-8': function() {
-      $('#slide8 [data-toggle="popover"]').popover('hide');
+      setTimeout(function() {
+        $('#slide8 [data-toggle="popover"]').popover('hide');
+      }, 500);
     },
     'slide-9': function() {}
   };
@@ -190,7 +194,7 @@ var A2030;
       $('#slide7 [data-toggle="popover"]').each(function(i) {
         var el = $(this);
         setTimeout(function() {
-          el.popover('show');
+          if (A2030.currentIndex == 7) el.popover('show');
         }, i * 1000);
       });
     },
@@ -199,7 +203,7 @@ var A2030;
       $('#slide8 [data-toggle="popover"]').each(function(i) {
         var el = $(this);
         setTimeout(function() {
-          el.popover('show');
+          if (A2030.currentIndex == 8) el.popover('show');
         }, i * 1000);
       });
     },
